@@ -146,7 +146,7 @@ class RequestsRapiClient(object):
 
         try:
             features = self.request("get", "/2/features")
-        except NotOkayError, noe:
+        except NotOkayError as noe:
             if noe.code == 404:
                 # Okay, let's calm down, this is totally reasonable. Certain
                 # older Ganeti RAPIs don't have a list of features.
